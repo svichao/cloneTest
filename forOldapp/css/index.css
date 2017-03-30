@@ -10,7 +10,6 @@
 .footer .item a{ line-height: 22px;color:#868686;}
 
 
-
 /***************health***************/
 .health {width: 100vw;height: 100%;display: flex;flex-direction: column;}
 
@@ -33,14 +32,25 @@
 .health .title .item:nth-child(3){width:20%;text-align: center; font:13px/41px ''; padding:21px 0 0 0;color:#b4b4b4;}
 
 /*share*/
-.health #share {flex-grow: 1;display: flex;flex-direction:column;}
-.health #share .date { height:59px; display: flex; flex-direction:row;padding:5px 10px 0;  align-items: center;}
-.health #share .date .day {color:#b1b1b1;}
-.health #share .date .blank { flex-grow:1;}
-.health #share .date .icon {text-align: right;font-family:Consolas;color:#a6a6a6;}
-.health #share .chart { height:182px;}
-.health #share .record {flex-grow:1; display: flex; flex-direction:column;}
-.health #share .record .item {display: flex; flex-direction:row;}
-.health #share .record .item:nth-child(2) { border-bottom: 1px solid #f6f6f6;}
-.health #share .record .item:nth-child(4) { border-bottom: 1px solid #f6f6f6;}
+.health #share{flex-grow: 1;display: flex;flex-direction:column;}
+/*heartRate*/
+.heartRate .date { height:59px; display: flex; flex-direction:row;padding:5px 10px 0;  align-items: center;}
+.heartRate .date .day {color:#b1b1b1;}
+.heartRate .date .blank { flex-grow:1;}
+.heartRate .date .icon {text-align: right;color:#a6a6a6;}
+.heartRate .chart { height:182px;padding:0 3vw;}
+.heartRate .chart canvas {width: 100%;height:65%;}
+.heartRate .clock {display:flex;flex-direction: row;width: 100%;}
+.heartRate .clock .item{font:12px/1.7 '';color:#999;text-align: center;}
+.heartRate .clock .item:nth-child(1){width:36%;margin-left:10%;}
+.heartRate .clock .item:nth-child(2){width:18%;}
+.heartRate .clock .item:nth-child(3){width:36%;}
+.heartRate .record {flex-grow:1; display: flex; flex-direction:column;}
+.heartRate .record .item {display: flex; flex-direction:row;padding: 0 3vw 0 6.7vw;line-height: 35px;color:#b4b4b4}
+.heartRate .record .item:nth-child(1) {color:#54e514;}
+.heartRate .record .item:nth-child(2) { border-bottom: 1px solid #f6f6f6;}
+.heartRate .record .item:nth-child(3) {color:#e68921;}
+.heartRate .record .item:nth-child(4) { border-bottom: 1px solid #f6f6f6;}
+.heartRate .record .aside {width:50%;}
+.heartRate .record .item .aside:nth-child(2) {text-align: right;}
 

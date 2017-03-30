@@ -4,7 +4,7 @@
         <div class="top"></div>
         <header>健康</header>
         <nav>
-            <div ng-repeat="item in navItems" ng-class='"item "+item.className'><a ui-sref="{{item.ui_sref}}" ng-click="addClass($index)">{{item.text}}</a></div>
+            <div ng-repeat="item in healItems" ng-class='"item "+item.className'><a ui-sref="{{item.ui_sref}}" ng-click="healAddClass($index)">{{item.text}}</a></div>
         </nav>
         <div class="title">
             <div class="item">{{item}}检测</div>
@@ -16,6 +16,7 @@
     <!--share-->
     <div id="share">
         <div ui-view=""></div>
+        <div ui-view="health"></div>
     </div>
 
 </div>
