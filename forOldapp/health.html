@@ -1,7 +1,6 @@
 <div class="health" ng-controller="healthCtrl">
     <!--globe-->
     <div class="header">
-        <div class="top"></div>
         <header>健康</header>
         <nav>
             <div ng-repeat="item in healItems" ng-class='"item "+item.className'><a ui-sref="{{item.ui_sref}}" ng-click="healAddClass($index)">{{item.text}}</a></div>

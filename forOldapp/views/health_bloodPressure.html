@@ -1,34 +1,46 @@
-<div class="heartRate bloodPressure">
+<!--bloodPressure-->
+<div class="heartRate bloodPressure" id="bloodPressure" ng-controller="bloodPressureCtrl"></div>
+
+<!--temp-->
+<div class="bloodPressureTemp" id="bloodPressureTemp" style="display: none">
     <div class="date">
         <div class="day">{{month}}月{{date}}日</div>
         <div class="blank"></div>
         <div class="icon">></div>
     </div>
+
     <div class="chart">
         <!--<img src="img/table.png" alt="">-->
-        <canvas id="cvs" width="352" height="120"></canvas>
+        <canvas id="cvs" width="352" height="180">您的浏览器不支持canvas</canvas>
         <div class="clock">
             <div class="item">6:00</div>
             <div class="item">12:00</div>
             <div class="item">18:00</div>
         </div>
     </div>
+
     <div class="record">
         <div class="item">
-            <div class="aside">正常：</div>
-            <div class="aside">60-100次 / 分 ></div>
+            <div class="aside">ABP正常值：白昼<135/85</div>
+            <div class="aside">舒张压</div>
         </div>
         <div class="item">
-            <div class="aside">尚未出现异常</div>
-            <div class="aside">持续检测中...</div>
+            <div class="aside">夜间<120/70</div>
+            <div class="aside">收缩压</div>
         </div>
         <div class="item">
-            <div class="aside">异常：</div>
-            <div class="aside"><60 >100次 / 分 ></div>
-        </div>
-        <div class="item">
-            <div class="aside">历史记录 13 次</div>
-            <div class="aside">持续检测中...</div>
+            <div class="aside">
+                <div>舒张压</div>
+                <div>121</div>
+                <div>mmHg</div>
+            </div>
+            <div class="aside">
+                <div>收缩压</div>
+                <div>78</div>
+                <div>mmHg</div>
+            </div>
+            <div class="aside">测量结果在正常范围内</div>
         </div>
     </div>
+
 </div>

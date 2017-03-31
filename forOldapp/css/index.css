@@ -1,52 +1,56 @@
 /***************container***************/
-.container{height:100vh;display: flex;flex-direction:column;}
+.container{width:100vw;height:100%;display: flex;flex-direction:column;}
 
 /***share****/
-.share{flex-grow: 1}
+.share{flex-grow: 1;display:flex;flex-direction: column;}
+.share>div[ui-view]{flex-grow: 1;display:flex;flex-direction: column;}
 
 /***footer***/
-.footer {height: 49px;background: #f3f3f3; display:flex;flex-direction: row;}
+.footer {height: 8%;background: #f3f3f3; display:flex;flex-direction: row;}
 .footer .item{ width:25%;text-align: center;}
-.footer .item a{ line-height: 22px;color:#868686;}
-
+.footer .item a{ line-height: 3%;color:#868686;}
 
 /***************health***************/
-.health {width: 100vw;height: 100%;display: flex;flex-direction: column;}
+.health {width: 100vw;display: flex;flex-direction: column;flex-grow: 1;}
 
 /*header*/
-.health .header {height: 179px;display: flex;flex-direction: column;}
+.health .header {height: 22vh;display: flex;flex-direction: column;}
 
-.health .top{background:#188fa3;height: 20px;}
-.health header {height: 44px;background: #01cce7;font: 20px/44px '';text-align: center;position: relative;z-index: 3;color: #fff;}
+.health header {line-height: 6vh;padding:2vh 0 0 0; background: #01cce7;text-align: center;position: relative;z-index: 3;color: #fff;font-size:20px}
 
-.health nav {height: 31px;padding-top: 22px;background: #efefef;position: relative;z-index: 2;box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);display: flex;flex-direction: row;  align-items: center;}
+.health nav {line-height: 5vh;padding:1vh 0 0 0;background: #efefef;position: relative;z-index: 2;box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);display: flex;flex-direction: row;  align-items: center;}
 .health nav .item {width: 21.6%;text-align: center;font-size: 15px;}
-.health nav .item a{padding:5px;font-size: 15px;color: #868686;}
+.health nav .item a{padding:0.7%;font-size: 15px;color: #868686;}
 .health nav .item:nth-child(2) {padding: 0 4.5%;}
 .health nav .item:nth-child(3) {padding: 0 4.5% 0 0;}
 .health nav .item.ac a{color: #01cce7;}
 
-.health .title {flex-grow: 1;background: #f5f5f5;display: flex;flex-direction:row;}
-.health .title .item:nth-child(1){ width:32.3%;text-align: center;font:18px/45px '';padding:17px 0 0 0;}
+.health .title {line-height: 6vh;padding:2vh 0 0 0;background: #f5f5f5;display: flex;flex-direction:row;}
+.health .title .item:nth-child(1){ width:32.3%;text-align: center;font-size: 18px;}
 .health .title .item:nth-child(2){flex-grow:1;}
-.health .title .item:nth-child(3){width:20%;text-align: center; font:13px/41px ''; padding:21px 0 0 0;color:#b4b4b4;}
+.health .title .item:nth-child(3){width:20%;text-align: center; color:#b4b4b4;}
 
 /*share*/
-.health #share{flex-grow: 1;display: flex;flex-direction:column;}
+.health #share{flex-grow:1;width: 100%;display:flex;flex-direction: column;}
+.health #share>div[ui-view="health"]{flex-grow: 1;display:flex;flex-direction: column;}
+
 /*heartRate*/
-.heartRate .date { height:59px; display: flex; flex-direction:row;padding:5px 10px 0;  align-items: center;}
+.heartRate{height: 100%;display: flex;flex-direction:column;flex-grow: 1;}
+.heartRate .date { height:6vh; display: flex; flex-direction:row;padding:5px 3vw 0;  align-items: center;}
 .heartRate .date .day {color:#b1b1b1;}
 .heartRate .date .blank { flex-grow:1;}
 .heartRate .date .icon {text-align: right;color:#a6a6a6;}
-.heartRate .chart { height:182px;padding:0 3vw;}
-.heartRate .chart canvas {width: 100%;height:65%;}
+
+.heartRate .chart {padding:0 3vw 0;}
+.heartRate .chart canvas {width: 100%;display: block;}
 .heartRate .clock {display:flex;flex-direction: row;width: 100%;}
 .heartRate .clock .item{font:12px/1.7 '';color:#999;text-align: center;}
 .heartRate .clock .item:nth-child(1){width:36%;margin-left:10%;}
 .heartRate .clock .item:nth-child(2){width:18%;}
 .heartRate .clock .item:nth-child(3){width:36%;}
-.heartRate .record {flex-grow:1; display: flex; flex-direction:column;}
-.heartRate .record .item {display: flex; flex-direction:row;padding: 0 3vw 0 6.7vw;line-height: 35px;color:#b4b4b4}
+
+.heartRate .record {flex-grow:1; display: flex; flex-direction:column;padding:auto 0;}
+.heartRate .record .item {display: flex; flex-direction:row;padding: 0 3vw 0 6.7vw;line-height: 5vh;color:#b4b4b4;}
 .heartRate .record .item:nth-child(1) {color:#54e514;}
 .heartRate .record .item:nth-child(2) { border-bottom: 1px solid #f6f6f6;}
 .heartRate .record .item:nth-child(3) {color:#e68921;}
@@ -54,3 +58,14 @@
 .heartRate .record .aside {width:50%;}
 .heartRate .record .item .aside:nth-child(2) {text-align: right;}
 
+/*bloodPressure*/
+.bloodPressure .chart {padding:0 3vw;}
+.bloodPressure .clock .item{font:12px/2 '';}
+.bloodPressure .clock .item:nth-child(1){width:25%;margin-left:12.5%;}
+.bloodPressure .clock .item:nth-child(2){width:25%;}
+.bloodPressure .clock .item:nth-child(3){width:25%;margin-right:12.5%;}
+.bloodPressure .record {padding: 5px 0 0 0;}
+.bloodPressure .record .item {font:12px/2 '';color:#b4b4b4}
+.bloodPressure .record .item .aside:nth-child(2){color:#212121;}
+.bloodPressure .record .item:nth-child(1){color:#b4b4b4 }
+.bloodPressure .record .item:nth-child(2) {padding:0 auto 1.5% }

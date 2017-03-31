@@ -1,18 +1,24 @@
-<div class="heartRate">
+<!--heartRate-->
+<div class="heartRate" id="heartRate" ng-controller="heartRateCtrl"></div>
+
+<!--temp-->
+<div class="heartRateTemp" style="display: none" id="heartRateTemp">
+
     <div class="date">
         <div class="day">{{month}}月{{date}}日</div>
         <div class="blank"></div>
         <div class="icon">></div>
     </div>
+
     <div class="chart">
-        <!--<img src="img/table.png" alt="">-->
-        <canvas id="cvs" width="352" height="120"></canvas>
+        <canvas id="cvs" width="352" height="120">您的浏览器不支持canvas</canvas>
         <div class="clock">
             <div class="item">6:00</div>
             <div class="item">12:00</div>
             <div class="item">18:00</div>
         </div>
     </div>
+
     <div class="record">
         <div class="item">
             <div class="aside">正常：</div>

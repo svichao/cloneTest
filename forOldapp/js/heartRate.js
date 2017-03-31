@@ -1,13 +1,23 @@
-//chart心率图
 (function () {
+    //build pages
+    document.getElementById("heartRate").innerHTML=document.getElementById("heartRateTemp").innerHTML;
+    //draw chart
+    drawHeartRate();
+})();
+
+//chart心率图
+function drawHeartRate(){
     var cvs = document.getElementById("cvs");
     var ctx = cvs.getContext("2d");
-    var w = 8.5 / 100 * $(window).width();
-    var W = 0.94 * $(window).width();
-//console.log(w);
+    var W = 0.94 * window.innerWidth;
+    var w =9.05/ 100 *W ;
 
-//heart data
-    var data = [85, 75, 80, 100, 90, 80, 76, 84, 74, 80, 77, 83];
+    //heart data
+    var data = [];
+    for(var a=0;a<12;a++){
+        var b=parseInt(Math.random()*25+75);
+        data.push(b)
+    }
 
     ctx.clearRect(0, 0, W, 120);
     ctx.fillStyle = "#fff";
@@ -23,18 +33,18 @@
         nextY = (120 - data[i + 1]) / 80;
         ctx.lineTo((i + 1) * w, nextY * 120);
     }
-    ctx.lineTo(12 * w,120);
-    ctx.lineTo(0,120);
+    ctx.lineTo(12 * w, 120);
+    ctx.lineTo(0, 120);
     ctx.closePath();
-    var grd = ctx.createLinearGradient(0,0,0,100);
-    grd.addColorStop(0,"#3bbddc");
-    grd.addColorStop(1,"#f0f9fc");
+    var grd = ctx.createLinearGradient(0, 0, 0, 120);
+    grd.addColorStop(0, "#abe2f1");
+    grd.addColorStop(1, "#fff");
     ctx.fillStyle = grd;
     ctx.fill();
 
     //table
     for (var y = 0; y < 4; y++) {
-        for (var x = 0; x < 11; x++) {
+        for (var x = 0; x < 12; x++) {
             //console.log(x);
             ctx.beginPath();
             ctx.rect(x * w, y * 30, w, 30);
@@ -54,4 +64,5 @@
         ctx.lineWidth = 1.5;
         ctx.stroke();
     }
-})();
+
+}
