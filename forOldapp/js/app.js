@@ -1,18 +1,30 @@
+var url = window.location.href;
+var index = url.indexOf("#");
+var homeUrl = url.substring(0, index) + "#/home";
+var hash = url.substring(index);
+if (hash != "#/home" && hash != "#" && hash != "#/")
+    window.location.href = homeUrl;
+
 var myapp = angular.module("myapp", ["ui.router"])
+    .run(['$rootScope', '$window', '$location', '$log', '$templateCache', function ($rootScope, $window, $location, $log, $templateCache) {
+        $rootScope.$on('$stateChangeSuccess', function ($rootScope) {
+            $templateCache.removeAll();
+        });
+    }])
     .config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/home");
         $stateProvider.state("home", {//default
-                url: "/home", views: {
-                    "": {templateUrl: "health.html"},
-                    "health@home": {templateUrl: "views/health_heartRate.html"}
-                }
-            })
-
+            url: "/home", views: {
+                "": {templateUrl: "health.html"},
+                "health@home": {templateUrl: "views/health_heartRate.html"}
+            }
+        })
             .state("health", {//点击health
                 url: "/health", views: {
                     "": {templateUrl: "health.html"},
                     "health@health": {templateUrl: "views/health_heartRate.html"}
-                }
+                },
+                controller: "healthCtrl"
             })
             .state("health.heartRate", {
                 url: "/heartRate", views: {
@@ -39,7 +51,44 @@ var myapp = angular.module("myapp", ["ui.router"])
                 controller: "sleepCtrl"
             })
 
-            .state("found", {url: "/found", templateUrl: "found.html"})
+            .state("found", {
+                url: "/found", views: {
+                    "": {templateUrl: "found.html"},
+                },
+                controller: "foundCtrl"
+            })
+/*
+            .state("found.charity", {
+                url: "/charity", views: {
+                    "found": {templateUrl: "views/found_charity.html"}
+                },
+                controller: "charityCtrl"
+            })
+            .state("found.activity", {
+                url: "/activity", views: {
+                    "found": {templateUrl: "views/found_activity.html"}
+                },
+                controller: "activityCtrl"
+            })
+            .state("found.volunteer", {
+                url: "/volunteer", views: {
+                    "found": {templateUrl: "views/found_volunteer.html"}
+                },
+                controller: "volunteerCtrl"
+            })
+            .state("found.heart", {
+                url: "/heart", views: {
+                    "found": {templateUrl: "views/found_heart.html"}
+                },
+                controller: "heartCtrl"
+            })
+            .state("found.share", {
+                url: "/share", views: {
+                    "found": {templateUrl: "views/found_share.html"}
+                },
+                controller: "shareCtrl"
+            })
+*/
 
             .state("recommend", {url: "/recommend", templateUrl: "recommend.html"})
 
@@ -49,16 +98,26 @@ var myapp = angular.module("myapp", ["ui.router"])
     .controller("myCtrl", function ($scope) {
         //----index----
         $scope.Items = [
-            {ui_sref: "health", text: "健康", name: "heartRate"},
-            {ui_sref: "found", text: "发现", name: ""},
-            {ui_sref: "recommend", text: "推荐", name: ""},
-            {ui_sref: "mine", text: "我的", name: ""}
+            {ui_sref: "health", text: "健康", className: "ac", name: "heartRate", src1: "health_", src2: "blue"},
+            {ui_sref: "found", text: "发现", className: "", name: "found", src1: "find_", src2: "grey"},
+            {ui_sref: "recommend", text: "推荐", className: "", name: "", src1: "recom_", src2: "grey"},
+            {ui_sref: "mine", text: "我的", className: "", name: "", src1: "mine_", src2: "grey"}
         ];
-        $scope.init = function () {
-            $scope.healAddClass(0);
-            var m = $scope.Items[0].name;
-            console.log(m);
-            loadJs(m);
+        $scope.init = function (index) {
+            for (var i = 0; i < $scope.Items.length; i++) {
+                $scope.Items[i].src2 = "grey"
+            }
+            $scope.Items[index].src2 = "blue";
+
+            addClass($scope.Items, index);
+
+            switch (index) {
+                case 0:
+                    $scope.healAddClass(0);
+                    break
+            }
+            var m = $scope.Items[index].name;
+            $scope.$on('$viewContentLoaded',  loadJs(m));
         };
 
         //----healthCtrl----
@@ -74,43 +133,64 @@ var myapp = angular.module("myapp", ["ui.router"])
         ];
         $scope.item = "心率";//初始
         $scope.healAddClass = function (index) {
-            for (var i = 0; i < $scope.healItems.length; i++) {
-                $scope.healItems[i].className = "";
-            }
-            $scope.healItems[index].className = "ac";
+            addClass($scope.healItems, index);
             $scope.item = $scope.healItems[index].text;
-
-            //var m = $scope.healItems[index].name;
-            //loadJs(m);
         };
     })
     .controller("healthCtrl", function ($scope) {
-
     })
     .controller("heartRateCtrl", function ($scope) {
-        $scope.$on('$viewContentLoaded',loadJs("heartRate"));
+        $scope.$on('$viewContentLoaded', loadJs("heartRate"));
     })
     .controller("bloodPressureCtrl", function ($scope) {
-        $scope.$on('$viewContentLoaded',loadJs("bloodPressure"));
+        $scope.$on('$viewContentLoaded', loadJs("bloodPressure"));
     })
     .controller("stepNumberCtrl", function ($scope) {
-        $scope.$on('$viewContentLoaded',loadJs("stepNumber"));
+        $scope.$on('$viewContentLoaded', loadJs("stepNumber"));
     })
     .controller("sleepCtrl", function ($scope) {
-        $scope.$on('$viewContentLoaded',loadJs("sleep"));
+        $scope.$on('$viewContentLoaded', loadJs("sleep"));
+    })
+    .controller("foundCtrl", function ($scope) {
+        $scope.foundItems = [
+            {ui_sref: "found.charity", text: "慈善", className: "ac", name: "charity"},
+            {ui_sref: "found.activity", text: "活动", className: "", name: "activity"},
+            {ui_sref: "found.volunteer", text: "志愿者", className: "", name: "volunteer"},
+            {ui_sref: "found.heart", text: "心语", className: "", name: "heart"},
+            {ui_sref: "found.share", text: "分享", className: "", name: "share"}
+        ];
+        $scope.foundItem = "慈善";//初始
+        $scope.foundAddClass = function (index) {
+            addClass($scope.foundItems, index);
+            $scope.foundItem = $scope.foundItems[index].text;
+
+        }
     });
 
-//加载js
+
+//addClass
+function addClass(arr, index) {
+    for (var i = 0; i < arr.length; i++) {
+        arr[i].className = "";
+    }
+    arr[index].className = "ac";
+}
+
+//load js
 function loadJs(m) {
     ajax({
         url: "js/" + m + ".js",//请求地址
         type: "GET",//请求方式
         dataType: "script",
         success: function (response, xml) {
-            var script=document.createElement("script");
-            script.innerHTML=response;
+            localStorage.script = response;
+            var _script = document.getElementById("script");
+            document.body.removeChild(_script);
+            var script = document.createElement("script");
+            script.innerHTML = response;
+            script.id = "script";
             document.body.appendChild(script);
-            console.log('加载'+m+".js");
+            console.log('加载' + m + ".js");
         },
         fail: function (status) {
         }
@@ -118,8 +198,8 @@ function loadJs(m) {
 
 }
 
-//定义ajax：
-function ajax(options){
+//function ajax：
+function ajax(options) {
     options = options || {};
     options.type = (options.type || "GET").toUpperCase();
     options.dataType = options.dataType || "json";

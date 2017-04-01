@@ -1,3 +1,15 @@
-<div class="recommend">
-    recommend
+<div class="recommend" ng-controller="recommendCtrl">
+    <!--globe-->
+    <div class="header">
+        <header>推荐</header>
+        <nav>
+            <input ng-class='"input"+"xxx"' type="text" placeholder="搜索" ng-click="" />
+        </nav>
+    </div>
+
+    <!--share-->
+    <div id="share">
+        <div ui-view=""></div>
+        <div ui-view="recommend"></div>
+    </div>
 </div>
