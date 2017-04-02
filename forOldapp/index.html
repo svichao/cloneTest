@@ -20,8 +20,9 @@
     </div>
 
     <!--globe-->
+    <div class="footer1"></div>
     <div class="footer">
-        <div ng-class='"item "+item.className' ng-repeat="item in Items"><a ng-click="init($index)" ui-sref="{{item.ui_sref}}"style="background-image: url('img/{{item.src1}}{{item.src2}}.png')">{{item.text}}</a></div>
+        <div ng-repeat="item in Items" ng-class='"item "+item.className'><a ng-click="init($index)" ui-sref="{{item.ui_sref}}" style="background-image: url('img/{{item.src1}}{{item.src2}}.png')">{{item.text}}</a></div>
 
 
     </div>

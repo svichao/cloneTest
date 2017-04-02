@@ -1,11 +1,13 @@
 (function () {
-    var items=document.getElementById("found_items");
-    console.log(items);
-
-    var aItem=items.getElementsByClassName("item");
-    items.style.marginLeft=-100*index+"vw";
-
-    addClass(aItem, index);
+    //build pages
+    document.getElementById("share").innerHTML=document.getElementById("foundTmp").innerHTML;
 })();
+
+function foundAnimate(index){
+    var items = document.getElementById("found_items");
+    var aItem = items.getElementsByTagName("div");
+    items.style.transform ='translateX('+-72 * index+'vw) ';
+    addClass(aItem, index);
+}
 
 

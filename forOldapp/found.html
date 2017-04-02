@@ -3,7 +3,7 @@
     <div class="header">
         <header>发现</header>
         <nav>
-            <input ng-class='"input"+"xxx"' type="text" placeholder="搜索" ng-click="" />
+            <input ng-class='"input"+"xxx"' type="text" placeholder="搜索" ng-click=""/>
         </nav>
         <div class="title">
             <div class="item">{{foundItem}}</div>
@@ -12,14 +12,6 @@
 
     <!--share-->
     <div id="share">
-        <div class="items" id="found_items">
-            <div class="item ac charity"><img src="img/charitybanner@2x.png" alt=""></div>
-            <div class="item activity"><img src="img/activitybanner@2x.png" alt=""></div>
-            <div class="item volunteer"><img src="img/volunteerbanner@2x.png" alt=""></div>
-            <div class="item heart"><img src="img/heartbanner@2x.png" alt=""></div>
-            <div class="item share"><img src="img/sharebanner@2x.png" alt=""></div>
-        </div>
-
         <div ui-view=""></div>
         <div ui-view="found"></div>
 
@@ -27,7 +19,21 @@
 
     <!--footer-->
     <div class="found_footer">
-        <div ng-repeat="item in foundItems" ng-class='"item "+item.className' style="background-image:url('img/{{item.name}}@2x.png')"><a ng-click="foundAddClass($index)">{{item.text}}</a></div>
+        <div ng-repeat="item in foundItems" ng-class='"item "+item.className'
+             style="background-image:url('img/{{item.name}}@2x.png')"><a
+                ng-click="foundAddClass($index)">{{item.text}}</a></div>
         <!--ui-sref="{{item.ui_sref}}"-->
+    </div>
+</div>
+
+<!--foundTmp-->
+<div class="foundTmp" id="foundTmp" style="display: none">
+    <div class="items clearfix" id="found_items">
+        <div ng-repeat="item in foundItems" ng-class='"item "+item.className'>
+            <img src="img/{{item.name}}banner@2x.png" alt="">
+            <p>{{item.cont}}</p>
+            <p>{{item.author}}</p>
+            <p><a>进入板块</a></p>
+        </div>
     </div>
 </div>
