@@ -82,10 +82,10 @@
 
 /***************found***************/
 .found .header{height: 21vh;background: #f5f5f5;}
-.found .header nav,.recommend .header nav{padding:1vh 3vw;}
-.found .header nav input,.recommend .header nav input{width: 100%;font:15px/2 "";border: 1px solid #F5F5F5;border-radius: 8px;text-align: center;color:#999999;background:#fff url("../img/searchicon.png") no-repeat 42% 11px;}
+.found .header nav,.recommend .header nav{padding:1vh 3vw;position: relative;}
+.found .header nav input,.recommend .header nav input{width: 100%;font:15px/2 "";border: 1px solid #F5F5F5;border-radius: 8px;text-align: center;color:#999999;background:#fff}
+.found .header nav a,.recommend .header nav a{position: absolute;right: 6%;top: 22%;}
 .found .title{line-height: 6vh;text-align: center;font-size: 14px;color:#999;}
-/*.found .header nav input.input.ac{background-image: none;}*/
 
 .found #share,.recommend #share{background: #f5f5f5;display: flex;flex-direction: column;overflow: hidden;flex-grow: 1;}
 /*.found #share>div[ui-view="found"]{flex-grow: 1;display: flex;flex-direction: column;}*/
@@ -107,14 +107,23 @@
 .found_footer .item a{font:12px/2.1 "";color:#999;}
 
 /***************recommend***************/
-.recommend #share{padding:0 3vw;overflow-y: scroll;width:94vw;}
-.recommend #share .items{width: 94vw;}
+.recommend .header{height: 15vh;}
+.recommend #share{padding:0 3vw;overflow-y: scroll;width:94vw;height: 50vh}
+.recommend #share .items{width: 94vw;color:#999;}
 .recommend #share .items .pic{width: 100%;position: relative;font-size: 0;}
 .recommend #share .items .pic img{width: 100%;}
 .recommend #share .items .pic .disc{position: absolute;left:0;bottom:0;color:#fff;font:20px/3 "";padding:0 0 0 26px;}
-
-.recommend #share .items .comment .item{display: flex;flex-direction: row;justify-content: space-between;}
-.recommend #share .items .comment .item ._item{ }
+.recommend #share .items h4{font:12px/3 "";color:#333;padding: 0 0 0 12px;}
+.recommend #share .items .comment{padding:0 12px;}
+.recommend #share .items .comment .item:nth-child(1){display: flex;flex-direction: row;justify-content: space-between;}
+.recommend #share .items .comment .item:nth-child(2){padding:9px 0 0 0;line-height: 1.5;}
+.recommend #share .items .comment .item:nth-child(3){text-align: right;}
+.recommend #share .items .comment .item:nth-child(3) a{padding:0 0 0 30px;color: #FFA353;line-height: 5;}
+.recommend #share .items .comment .item ._item{ display:flex;flex-direction:row;align-items: center;}
+.recommend #share .items .comment .item ._item:nth-child(1) img{width: 30px;}
+.recommend #share .items .comment .item ._item:nth-child(1) span {padding:0 10px;font: 12px/1 "";color:#333;}
+.recommend #share .items .comment .item ._item:nth-child(2) img {width:15px;}
+.recommend #share .items .comment .item ._item:nth-child(2) span {padding:0 15px 0 5px;}
 
 
 
