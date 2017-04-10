@@ -2,7 +2,6 @@
     //build pages
     document.getElementById("share").innerHTML=document.getElementById("foundTmp").innerHTML;
 
-
 })();
 
 function foundAnimate(index){

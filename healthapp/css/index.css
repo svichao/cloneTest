@@ -1,13 +1,13 @@
 /***************container***************/
-.container{width:100vw;height:100%;display: flex;flex-direction:column;position: relative;}
+.container{width:100vw;height:100vh;display: flex;flex-direction:column;position: relative;}
 
 /*top*/
-.top{width:96%;position: absolute;left:0;top:0;display: flex;flex-direction: row;z-index: 19;color:#fff;padding:0 2vw;}
+/*.top{width:96%;position: absolute;left:0;top:0;display: flex;flex-direction: row;z-index: 19;color:#fff;padding:0 2vw;}
 .top .item{width: 33.3%;}
 .top .item i{width: 7px;height: 7px;transform: scale(0.7);margin-top: 6px;}
 .top .item:nth-child(1) .sketch{padding:0 4px 0 2px;}
 .top .item:nth-child(2){text-align: center;}
-.top .item:nth-child(3){text-align: right;}
+.top .item:nth-child(3){text-align: right;}*/
 
 /***share****/
 .share{flex-grow: 1;display:flex;flex-direction: column;}
@@ -142,7 +142,8 @@
 
 /***************recommend***************/
 .recommend .header{height: 17.6vh;}
-.recommend #share{padding:0 3vw;overflow-y: scroll;width:94vw;height: 50vh}
+.recommend .header nav{box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);}
+.recommend #share{padding:0 3vw;overflow-y: scroll;width:94vw;height: 50vh;padding-top: 10px;}
 .recommend #share .items{width: 94vw;color:#999;}
 .recommend #share .items .pic{width: 100%;position: relative;font-size: 0;}
 .recommend #share .items .pic img{width: 100%;}
