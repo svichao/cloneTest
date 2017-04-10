@@ -21,13 +21,12 @@
 
 /***************health***************/
 .health,.found,.recommend,.mine {width: 100vw;display: flex;flex-direction: column;flex-grow: 1;position: relative;}
-.health .top,.found .top,.recommend .top,.mine .top{height: 3vh;background: #198fa4;position: absolute;left:0;top:0;z-index: 5;opacity:0.7}
 .found .top,.recommend .top,.mine .top{opacity: 0;}
 
-    /*header*/
-.health .header,.found .header,.recommend .header,.mine .header{height: 27vh;display: flex;flex-direction: column;}
+/*header*/
+.health .header,.found .header,.recommend .header,.mine .header{height: 24vh;display: flex;flex-direction: column;}
 
-.health header,.found header,.recommend header,.mine header {line-height: 6.6vh;padding:3.3vh 0 0 0; background: #01cce7;text-align: center;position: relative;z-index: 3;color: #fff;font-size:20px}
+.health header,.found header,.recommend header,.mine header {line-height: 6.9vh; background: #01cce7;text-align: center;position: relative;z-index: 3;color: #fff;font-size:20px}
 
 .health nav,.found nav,.recommend nav {line-height: 6vh;height:6vh;padding:1.8vh 0 0 0;background: #efefef;position: relative;z-index: 2;box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);display: flex;flex-direction: row;  align-items: center;}
 .health nav .item {width: 21.6%;text-align: center;font-size: 15px;}
@@ -114,7 +113,7 @@
 
 
 /***************found***************/
-.found .header{height: 24vh;background: #f5f5f5;}
+.found .header{height: 21vh;background: #f5f5f5;}
 .found .header nav,.recommend .header nav{padding:1.5vh 3vw;position: relative;}
 .found .header nav input,.recommend .header nav input{height:100%;width: 100%;font:15px/2 "";border: 1px solid #F5F5F5;border-radius: 8px;text-align: center;color:#999999;background:#fff; padding-left: 25px;}
 .found .header nav a,.recommend .header nav a{position: absolute;left: 43%;top: 9px;}
@@ -140,9 +139,9 @@
 .found_footer .item a{font:12px/2.1 "";color:#999;}
 
 /***************recommend***************/
-.recommend .header{height: 17.6vh;}
+.recommend .header{height: 14.6vh;}
 .recommend .header nav{box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);}
-.recommend #share{padding:0 3vw;overflow-y: scroll;width:94vw;height: 50vh;padding-top: 10px;}
+.recommend #share{padding:10px 3vw 0;overflow-y: scroll;width:94vw;height: 50vh;}
 .recommend #share .items{width: 94vw;color:#999;}
 .recommend #share .items .pic{width: 100%;position: relative;font-size: 0;}
 .recommend #share .items .pic img{width: 100%;}
