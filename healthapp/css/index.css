@@ -1,7 +1,6 @@
 /***************container***************/
 .container{width:100vw;height:100vh;display: flex;flex-direction:column;position: relative;}
 
-/*top*/
 /*.top{width:96%;position: absolute;left:0;top:0;display: flex;flex-direction: row;z-index: 19;color:#fff;padding:0 2vw;}
 .top .item{width: 33.3%;}
 .top .item i{width: 7px;height: 7px;transform: scale(0.7);margin-top: 6px;}
