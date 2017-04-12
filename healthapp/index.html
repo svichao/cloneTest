@@ -23,7 +23,7 @@
 			</div>
 
 			<!--globe-->
-			<div class="footer">
+			<div class="footer" ng-show="ifshow">
 				<div ng-repeat="item in Items" ng-class='"item "+item.className'>
 					<a ng-click="init($index)" ui-sref="{{item.ui_sref}}" style="background-image: url('img/{{item.src1}}{{item.src2}}.png')">{{item.text}}</a>
 				</div>

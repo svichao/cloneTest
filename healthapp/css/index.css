@@ -20,13 +20,15 @@
 
 
 /***************health***************/
-.health,.found,.recommend,.mine {width: 100vw;display: flex;flex-direction: column;flex-grow: 1;position: relative;}
+.health,.found,.recommend,.mine {width: 100vw;display: flex;flex-direction: column;flex-grow: 1;position: relative;left:0;transition:all 0.3s;}
 .found .top,.recommend .top,.mine .top{opacity: 0;}
-
+.health.ac{left:-100vw;}
 /*header*/
 .health .header,.found .header,.recommend .header,.mine .header{height: 24vh;display: flex;flex-direction: column;}
 
 .health header,.found header,.recommend header,.mine header {line-height: 6.9vh; background: #01cce7;text-align: center;position: relative;z-index: 3;color: #fff;font-size:20px}
+.health header span{position:absolute;left:3vw;top:0;margin-top: 0;font:17px/1 "";}
+.health header span i{font: 43px/1 consolas;display: inline-block;}
 
 .health nav,.found nav,.recommend nav {line-height: 6vh;height:6vh;padding:1.8vh 0 0 0;background: #efefef;position: relative;z-index: 2;box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);display: flex;flex-direction: row;  align-items: center;}
 .health nav .item {width: 21.6%;text-align: center;font-size: 15px;}
@@ -38,7 +40,29 @@
 .health .title{line-height: 6.5vh;padding:2.8vh 0 0 0;background: #f5f5f5;display: flex;flex-direction:row;}
 .health .title .item:nth-child(1){ width:32.3%;text-align: center;font-size: 18px;}
 .health .title .item:nth-child(2){flex-grow:1;}
-.health .title .item:nth-child(3){width:20%;text-align: center; color:#b4b4b4;font-size: 14px;}
+.health .title .item:nth-child(3){width:20%;text-align: center; }
+.health .title .item:nth-child(3) a{color:#b4b4b4;font-size: 14px;}
+
+.health .set{width: 100vw;height: 100vh;position: absolute;left: 100vw;top: 0;background: #f5f5f5;z-index: 5;}
+.health .set header{height: 6.9vh;background: #01CCE7;text-align: center;position: relative;}
+.health .set header .back{position: absolute;left:3vw;top:0;font:17px/6.9vh '';}
+.health .set header .back i{font:30px/6.9vh 'consolas';}
+.health .set ul {padding-top:3vh;border-top: 1px solid #e1e1e3;}
+.health .set ul li{display:flex;flex-direction: row;justify-content: space-between;height:6.4vh;align-items: center;padding:0 3vw; background: #fff;border-bottom: 1px solid #e1e1e3;}
+.health .set ul li:nth-child(3),.health .set ul li:nth-child(4),.health .set ul li:nth-child(5){margin-bottom: 3vh;}
+.health .set ul li .item{display:flex;flex-direction: row;justify-content: space-between;font:14px/1 ""; }
+.health .set ul li .item:nth-child(2){color:#8f8e94;}
+.health .set .tag{font:12px/3 "";color:#c6c6c6;padding: 0 0 0 3vw;}
+
+/*health***modal*/
+.health .modal{position: absolute;z-index: 5;background:rgba(0,0,0,0.3);width: 100vw;height: 100vh;left:0;top:0;}
+.health .modal .window{position: absolute;z-index: 5;background:#f2f3f3;width: 72vw;height: 24vh;left:0;top:0;right:0;bottom:0;margin:auto;border-radius: 10px;border:1px solid #fff;text-align: center;}
+.health .modal .date{font:16px/2.3 "";padding-top: 13px;}
+.health .modal .week{font:12px/2 "";}
+.health .modal .window input{border:1px solid #d7d9d9;font:14px/2 "";width:63vw;margin:14px 0 10px;}
+.health .modal .window .confirm {display:flex;flex-direction: row;justify-content: space-between;border-top: 1px solid #dcdddd;}
+.health .modal .window .confirm .item{color:#067aff;width: 50%;text-align: center;font:16px/34px ""}
+.health .modal .window .confirm .item:nth-child(1){border-right: 1px solid #ddd}
 
 /*share*/
 .health #share,.found #share,.recommend #share,.mine #share{flex-grow:1;width: 100%;display:flex;flex-direction: column;}
@@ -114,7 +138,7 @@
 
 /***************found***************/
 .found .header{height: 21vh;background: #f5f5f5;}
-.found .header nav,.recommend .header nav{padding:1.5vh 3vw;position: relative;}
+.found .header nav,.recommend .header nav{padding:1.2vh 3vw;position: relative;}
 .found .header nav input,.recommend .header nav input{height:100%;width: 100%;font:15px/2 "";border: 1px solid #F5F5F5;border-radius: 8px;text-align: center;color:#999999;background:#fff; padding-left: 25px;}
 .found .header nav a,.recommend .header nav a{position: absolute;left: 43%;top: 9px;}
 .found .title{line-height: 6.4vh;text-align: center;font-size: 14px;color:#999;}

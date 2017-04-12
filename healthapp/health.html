@@ -1,7 +1,7 @@
-<div class="health" ng-controller="healthCtrl">
+<div ng-controller="healthCtrl" ng-class='"health "+ifac'>
     <!--globe-->
     <div class="header">
-        <div class="top"></div>
+        <!--<div class="top"></div>-->
         <header>健康</header>
         <nav>
             <div ng-repeat="item in healItems" ng-class='"item "+item.className'><a ui-sref="{{item.ui_sref}}" ng-click="healAddClass($index)">{{item.text}}</a></div>
@@ -9,7 +9,7 @@
         <div class="title">
             <div class="item">{{item}}检测</div>
             <div class="item"></div>
-            <div class="item">设置</div>
+            <div class="item"><a ng-click="setHealth()">设置</a></div>
         </div>
     </div>
 
@@ -17,6 +17,50 @@
     <div id="share">
         <div ui-view=""></div>
         <div ui-view="health"></div>
+    </div>
+
+    <div class="set">
+        <header><a class="back" ng-click="back()"><i><</i> 返回</a>心率设置</header>
+        <ul>
+            <li>
+                <div class="item">显示设置</div>
+                <div class="item">双曲线></div>
+            </li>
+            <li>
+                <div class="item">定期提醒</div>
+                <div class="item">每隔一小时></div>
+            </li>
+            <li>
+                <div class="item">语音播报</div>
+                <div class="item">已开启></div>
+            </li>
+            <li>
+                <div class="item">同步</div>
+                <div class="item">关闭></div>
+            </li>
+            <li>
+                <div class="item">已配对设备</div>
+                <div class="item">100 <i class="fa fa-batery"></i>Valure></div>
+            </li>
+            <li>
+                <div class="item">自动报警</div>
+                <div class="item">123<img src="" alt=""></div>
+            </li>
+        </ul>
+        <div class="tag">血压检测超过标准即会报警提醒</div>
+
+    </div>
+
+    <div class="modal" ng-show="modalshow" ng-click="closemodal()">
+        <div class="window">
+            <div class="date">查询日期</div>
+            <div class="week"> < 本周 > </div>
+            <input type="text" placeholder="请输入查询日期：xx月xx日">
+            <div class="confirm">
+                <div class="item">取消</div>
+                <div class="item">确定</div>
+            </div>
+        </div>
     </div>
 
 </div>

@@ -126,9 +126,34 @@
                 $scope.date = date.getDate();
 
                 $scope.item = "心率";//初始
+                $scope.set_sref = "heartRate";
                 $scope.healAddClass = function (index) {
                     addClass($scope.healItems, index);
                     $scope.item = $scope.healItems[index].text;
+                    $scope.set_sref = $scope.healItems[index].name;
+                };
+
+                //设置/返回
+                $scope.ifshow=true;
+                $scope.ifac="";
+                $scope.setHealth=function () {
+                    $scope.ifac="ac";
+                    $scope.ifshow=false;
+
+                };
+                $scope.back=function () {
+                    $scope.ifac="";
+                    $scope.ifshow=true;
+
+                };
+
+                //modal
+                $scope.modalshow=false;
+                $scope.showmodal=function () {
+                    $scope.modalshow=true;
+                };
+                $scope.closemodal=function () {
+                    $scope.modalshow=false;
                 };
 
                 //----foundCtrl----
