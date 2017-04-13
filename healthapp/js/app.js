@@ -133,7 +133,7 @@
                     $scope.set_sref = $scope.healItems[index].name;
                 };
 
-                //设置/返回
+                //set/back
                 $scope.ifshow=true;
                 $scope.ifac="";
                 $scope.setHealth=function () {
@@ -144,16 +144,22 @@
                 $scope.back=function () {
                     $scope.ifac="";
                     $scope.ifshow=true;
-
+                    for(var j=0;j<$scope.foundclassnames.length;j++){
+                        $scope.foundclassnames[j].classname="";
+                    }
                 };
 
-                //modal
+                //modal(-----！！！！！！bug------ngclick放在health中才生效，待解决）
                 $scope.modalshow=false;
                 $scope.showmodal=function () {
                     $scope.modalshow=true;
                 };
                 $scope.closemodal=function () {
                     $scope.modalshow=false;
+                };
+                $scope.edit= function (e) {
+                    e=e||window.event;
+                    e.stopPropagation();
                 };
 
                 //----foundCtrl----
@@ -163,6 +169,24 @@
                     $scope.foundItem = $scope.foundItems[index].text;
                     foundAnimate(index);
                 };
+
+                $scope.foundclassnames=[
+                    {classname:""},
+                    {classname:""},
+                    {classname:""},
+                    {classname:""},
+                    {classname:""}
+                ];
+
+                $scope.showfounddetail= function (i) {
+                    for(var j=0;j<$scope.foundclassnames.length;j++){
+                        $scope.foundclassnames[j].classname="";
+                    }
+                    $scope.foundclassnames[i].classname="ac";
+                    $scope.ifshow=false;
+
+                };
+
 
                 //----recommendCtrl----
                 $scope.recommendItem = "";

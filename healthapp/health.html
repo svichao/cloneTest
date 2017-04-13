@@ -4,10 +4,13 @@
         <!--<div class="top"></div>-->
         <header>健康</header>
         <nav>
-            <div ng-repeat="item in healItems" ng-class='"item "+item.className'><a ui-sref="{{item.ui_sref}}" ng-click="healAddClass($index)">{{item.text}}</a></div>
+            <div ng-repeat="item in healItems" ng-class='"item "+item.className'><a ui-sref="{{item.ui_sref}}"
+                                                                                    ng-click="healAddClass($index)">{{item.text}}</a>
+            </div>
         </nav>
         <div class="title">
-            <div class="item">{{item}}检测</div>
+            <!--bug ng-click="showmodal()"-->
+            <div class="item" ng-click="showmodal()">{{item}}检测</div>
             <div class="item"></div>
             <div class="item"><a ng-click="setHealth()">设置</a></div>
         </div>
@@ -19,6 +22,7 @@
         <div ui-view="health"></div>
     </div>
 
+    <!--set/back-->
     <div class="set">
         <header><a class="back" ng-click="back()"><i><</i> 返回</a>心率设置</header>
         <ul>
@@ -48,17 +52,17 @@
             </li>
         </ul>
         <div class="tag">血压检测超过标准即会报警提醒</div>
-
     </div>
 
+    <!--modal-->
     <div class="modal" ng-show="modalshow" ng-click="closemodal()">
-        <div class="window">
+        <div class="window" ng-click="edit()">
             <div class="date">查询日期</div>
-            <div class="week"> < 本周 > </div>
+            <div class="week"> < 本周 ></div>
             <input type="text" placeholder="请输入查询日期：xx月xx日">
             <div class="confirm">
-                <div class="item">取消</div>
-                <div class="item">确定</div>
+                <div class="item" ng-click="closemodal()">取消</div>
+                <div class="item" ng-click="closemodal()">确定</div>
             </div>
         </div>
     </div>

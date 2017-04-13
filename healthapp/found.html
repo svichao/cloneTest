@@ -19,6 +19,15 @@
         <div ui-view=""></div>
         <div ui-view="found"></div>
 
+        <div class="items clearfix" id="found_items">
+            <div ng-repeat="item in foundItems" ng-class='"item "+item.className'>
+            <span class="pic">
+                <img src="img/{{item.name}}banner@2x.png" alt=""></span>
+                <p>{{item.cont}}</p>
+                <p>{{item.author}}</p>
+                <p ng-click="showfounddetail($index)"><a>进入板块</a></p>
+            </div>
+        </div>
     </div>
 
     <!--footer-->
@@ -28,6 +37,324 @@
                 ng-click="foundAddClass($index)">{{item.text}}</a></div>
         <!--ui-sref="{{item.ui_sref}}"-->
     </div>
+
+    <!--founddetail-->
+    <div class="founddetail">
+        <div  ng-class='"items "+foundclassnames[0].classname' >
+            <header><a class="back" ng-click="back()"><i><</i> 返回</a>慈善</header>
+
+            <div class="banner">
+                <img src="img/found/banner1.jpg" alt="">
+            </div>
+
+            <div class="cont">
+                <div class="city">
+                    <div class="item">青岛市 <i class="fa fa-angle-down"></i></div>
+                    <div class="item">筛选</div>
+                </div>
+                <ul>
+                    <li>
+                        <div class="pic">
+                            <img src="img/found/charity_03.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>关爱老人 从我做起 <a><img src="img/found/icon_03.jpg" alt=""></a></h3>
+                            <div>黄岛民生社区居家养老中心</div>
+                            <div class="district">
+                                <div class="item">黄岛区</div>
+                                <div class="item">31</div>
+                                <div class="item">2102.23</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic">
+                            <img src="img/found/charity_06.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>与爱同行 老有所依 <a><img src="img/found/icon_03.jpg" alt=""></a></h3>
+                            <div>崂山红星社区居家养老中心</div>
+                            <div class="district">
+                                <div class="item">市南区</div>
+                                <div class="item">31</div>
+                                <div class="item">2102.23</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic">
+                            <img src="img/found/charity_08.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>一花一世界 一善一梦想 <a><img src="img/found/icon_03.jpg" alt=""></a></h3>
+                            <div>青岛老人圆梦社区居家养老中心</div>
+                            <div class="district">
+                                <div class="item">崂山区</div>
+                                <div class="item">56</div>
+                                <div class="item">4645.21</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic">
+                            <img src="img/found/charity_10.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>老有所依 老有所乐 <a><img src="img/found/icon_03.jpg" alt=""></a></h3>
+                            <div>青岛老人圆梦社区居家养老中心</div>
+                            <div class="district">
+                                <div class="item">黄岛区</div>
+                                <div class="item">31</div>
+                                <div class="item">2102.23</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div  ng-class='"items "+foundclassnames[1].classname' >
+            <header><a class="back" ng-click="back()"><i><</i> 返回</a>活动</header>
+
+            <div class="banner">
+                <img src="img/found/banner2.jpg" alt="">
+            </div>
+
+            <div class="cont">
+                <div class="city">
+                    <div class="item">青岛市 <i class="fa fa-angle-down"></i></div>
+                    <div class="item">筛选</div>
+                </div>
+                <ul>
+                    <li>
+                        <div class="pic">
+                            <img src="img/found/activity_03.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>老年人徒步登山行<a><img src="img/found/icon_03.jpg" alt=""></a></h3>
+                            <div>黄岛民生社区居家养老中心</div>
+                            <div class="district">
+                                <div class="item">大珠山</div>
+                                <div class="item">5月16日</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic">
+                            <img src="img/found/activity_06.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>老年人免费义检<a><img src="img/found/icon_03.jpg" alt=""></a></h3>
+                            <div>崂山红星社区居家养老中心</div>
+                            <div class="district">
+                                <div class="item">崂山区</div>
+                                <div class="item">5月20日</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic">
+                            <img src="img/found/activity_08.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>老年人环唐岛湾骑行运动<a><img src="img/found/icon_03.jpg" alt=""></a></h3>
+                            <div>青岛老人圆梦社区居家养老中心</div>
+                            <div class="district">
+                                <div class="item">青岛市</div>
+                                <div class="item">5月11日</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic">
+                            <img src="img/found/activity_10.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>每日健身你我他<a><img src="img/found/icon_03.jpg" alt=""></a></h3>
+                            <div>青岛老人圆梦社区居家养老中心</div>
+                            <div class="district">
+                                <div class="item">大珠山</div>
+                                <div class="item">5月16日</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div  ng-class='"items "+foundclassnames[2].classname' >
+            <header><a class="back" ng-click="back()"><i><</i> 返回</a>志愿者</header>
+
+            <div class="banner">
+                <img src="img/found/banner3.jpg" alt="">
+            </div>
+
+            <div class="cont">
+                <div class="city">
+                    <div class="item">青岛市 <i class="fa fa-angle-down"></i></div>
+                    <div class="item">筛选</div>
+                </div>
+                <ul>
+                    <li>
+                        <div class="pic">
+                            <img src="img/found/volunteer_03.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>关爱老人 民生志愿者招募<a><img src="img/found/icon_03.jpg" alt=""></a></h3>
+                            <div>黄岛民生社区居家养老中心</div>
+                            <div class="district">
+                                <div class="item">黄岛区</div>
+                                <div class="item">5月16日</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic">
+                            <img src="img/found/volunteer_06.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>“红星闪闪” 爱心传递<a><img src="img/found/icon_03.jpg" alt=""></a></h3>
+                            <div>崂山红星社区居家养老中心</div>
+                            <div class="district">
+                                <div class="item">崂山区</div>
+                                <div class="item">5月20日</div>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic">
+                            <img src="img/found/volunteer_08.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>一花一世界 一善一梦想 <a><img src="img/found/icon_03.jpg" alt=""></a></h3>
+                            <div>青岛老人圆梦社区居家养老中心</div>
+                            <div class="district">
+                                <div class="item">市南区</div>
+                                <div class="item">5月11日</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pic">
+                            <img src="img/found/volunteer_10.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>你的关爱 我才完整<a><img src="img/found/icon_03.jpg" alt=""></a></h3>
+                            <div>青岛老人圆梦社区居家养老中心</div>
+                            <div class="district">
+                                <div class="item">市北区</div>
+                                <div class="item">5月16日</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div  ng-class='"items "+foundclassnames[3].classname' >
+            <header><a class="back" ng-click="back()"><i><</i> 返回</a>交流分享</header>
+
+            <div class="cont">
+                <div class="city">
+                    <div class="item">所有 <i class="fa fa-angle-down"></i></div>
+                    <div class="item">筛选</div>
+                </div>
+                <ul>
+                    <li>
+                        <div class="item">[分享]</div>
+                        <div class="item">
+                            <h3>照顾老人的那些对你绝对有用的方法</h3>
+                            <p>浏览量：6782 &nbsp;&nbsp;&nbsp; 回复：74 </p>
+                        </div>
+                        <div class="item">
+                            <div>爱哭的琪琪</div>
+                            <p>2017-06-12</p>
+                            <p>14:30</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">[杂谈]</div>
+                        <div class="item">
+                            <h3>如果让你再年轻20岁，你会干什么？</h3>
+                            <p>浏览量：5382 &nbsp;&nbsp;&nbsp; 回复：128 </p>
+                        </div>
+                        <div class="item">
+                            <div>奥利苗</div>
+                            <p>2017-06-12</p>
+                            <p>22:30</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">[经验]</div>
+                        <div class="item">
+                            <h3>老人心情不好的时候一定要小心</h3>
+                            <p>浏览量：2420 &nbsp;&nbsp;&nbsp; 回复：303 </p>
+                        </div>
+                        <div class="item">
+                            <div>swag八哥</div>
+                            <p>2017-06-12</p>
+                            <p>14:30</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">[分享]</div>
+                        <div class="item">
+                            <h3>5招教你让“顽固”的父母听你的</h3>
+                            <p>浏览量：6782 &nbsp;&nbsp;&nbsp; 回复：74 </p>
+                        </div>
+                        <div class="item">
+                            <div>爱哭的琪琪</div>
+                            <p>2017-06-12</p>
+                            <p>14:30</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">[分享]</div>
+                        <div class="item">
+                            <h3>这8种菜真的对老人身体好</h3>
+                            <p>浏览量：6782 &nbsp;&nbsp;&nbsp; 回复：74 </p>
+                        </div>
+                        <div class="item">
+                            <div>爱哭的琪琪</div>
+                            <p>2017-06-12</p>
+                            <p>14:30</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">[咨询]</div>
+                        <div class="item">
+                            <h3>5招教你让“顽固”的父母听你的</h3>
+                            <p>浏览量：6782 &nbsp;&nbsp;&nbsp; 回复：74 </p>
+                        </div>
+                        <div class="item">
+                            <div>爱哭的琪琪</div>
+                            <p>2017-06-12</p>
+                            <p>14:30</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">[咨询]</div>
+                        <div class="item">
+                            <h3>这8种菜真的对老人身体好</h3>
+                            <p>浏览量：6782 &nbsp;&nbsp;&nbsp; 回复：74 </p>
+                        </div>
+                        <div class="item">
+                            <div>爱哭的琪琪</div>
+                            <p>2017-06-12</p>
+                            <p>14:30</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div  ng-class='"items "+foundclassnames[4].classname' >
+            <header><a class="back" ng-click="back()"><i><</i> 返回</a></header>
+
+
+            <div class="cont">
+                <img src="img/found/talk_02.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <!--foundTmp-->
@@ -38,7 +365,7 @@
                 <img src="img/{{item.name}}banner@2x.png" alt=""></span>
             <p>{{item.cont}}</p>
             <p>{{item.author}}</p>
-            <p><a>进入板块</a></p>
+            <p ng-click="showfounddetail($index)"><a>进入板块</a></p>
         </div>
     </div>
 </div>

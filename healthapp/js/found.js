@@ -1,6 +1,6 @@
 (function () {
     //build pages
-    document.getElementById("share").innerHTML=document.getElementById("foundTmp").innerHTML;
+    //document.getElementById("share").innerHTML=document.getElementById("foundTmp").innerHTML;
 
 })();
 
