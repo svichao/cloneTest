@@ -1,13 +1,6 @@
 /***************container***************/
 .container{width:100vw;height:100vh;display: flex;flex-direction:column;position: relative;}
 
-/*.top{width:96%;position: absolute;left:0;top:0;display: flex;flex-direction: row;z-index: 19;color:#fff;padding:0 2vw;}
-.top .item{width: 33.3%;}
-.top .item i{width: 7px;height: 7px;transform: scale(0.7);margin-top: 6px;}
-.top .item:nth-child(1) .sketch{padding:0 4px 0 2px;}
-.top .item:nth-child(2){text-align: center;}
-.top .item:nth-child(3){text-align: right;}*/
-
 /***share****/
 .share{flex-grow: 1;display:flex;flex-direction: column;}
 .share>div[ui-view]{flex-grow: 1;display:flex;flex-direction: column;}
@@ -57,12 +50,12 @@
 
 /*health****modal*/
 .health .modal{position: absolute;z-index: 5;background:rgba(0,0,0,0.3);width: 100vw;height: 100vh;left:0;top:0;}
-.health .modal .window{position: absolute;z-index: 5;background:#f2f3f3;width: 72vw;height: 24vh;left:0;top:0;right:0;bottom:0;margin:auto;border-radius: 10px;border:1px solid #fff;text-align: center;}
-.health .modal .date{font:16px/2.3 "";padding-top: 13px;}
+.health .modal .window{overflow:hidden;position: absolute;z-index: 5;background:#f2f3f3;width: 72vw;height: 24vh;left:0;top:0;right:0;bottom:0;margin:auto;border-radius: 10px;border:1px solid #fff;text-align: center;}
+.health .modal .date{font:16px/2 "";padding-top: 13px;}
 .health .modal .week{font:12px/2 "";}
 .health .modal .window input{border:1px solid #d7d9d9;font:14px/2 "";width:63vw;margin:14px 0 10px;}
 .health .modal .window .confirm {display:flex;flex-direction: row;justify-content: space-between;border-top: 1px solid #dcdddd;}
-.health .modal .window .confirm .item{color:#067aff;width: 50%;text-align: center;font:16px/34px ""}
+.health .modal .window .confirm .item{color:#067aff;width: 50%;text-align: center;font:16px/40px ""}
 .health .modal .window .confirm .item:nth-child(1){border-right: 1px solid #ddd}
 
 /*share*/
@@ -135,7 +128,6 @@
 .sleep .shag{height:7.8vh;}
 
 
-
 /***************found***************/
 .found .header{height: 21vh;background: #f5f5f5;}
 .found .header nav,.recommend .header nav{padding:1.2vh 3vw;position: relative;}
@@ -205,8 +197,8 @@
 /***************recommend***************/
 .recommend .header{height: 14.6vh;}
 .recommend .header nav{box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);}
-.recommend #share{padding:10px 3vw 0;overflow-y: scroll;width:94vw;height: 50vh;}
-.recommend #share .items{width: 94vw;color:#999;}
+.recommend #share{padding:0 3vw;overflow-y: scroll;width:94vw;height: 50vh;background: #f4f4f4;}
+.recommend #share .items{width: 94vw;color:#999;margin:10px 0 0 0;background: #fff;border-radius: 5px;box-shadow: 0 0 10px rgba(0,0,0,0.15);}
 .recommend #share .items .pic{width: 100%;position: relative;font-size: 0;}
 .recommend #share .items .pic img{width: 100%;}
 .recommend #share .items .pic .disc{position: absolute;left:0;bottom:0;color:#fff;font:20px/3 "";padding:0 0 0 26px;}
@@ -221,8 +213,6 @@
 .recommend #share .items .comment .item ._item:nth-child(1) span {padding:0 10px;font: 12px/1 "";color:#333;}
 .recommend #share .items .comment .item ._item:nth-child(2) img {width:15px;}
 .recommend #share .items .comment .item ._item:nth-child(2) span {padding:0 15px 0 5px;}
-
-
 
 
 /***************mine***************/
